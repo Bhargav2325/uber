@@ -33,37 +33,28 @@ const Home = () => {
   const [activeField, setActiveField] = useState(null);
   const [fare, setFare] = useState({});
   const [vehicleType, setVehicleType] = useState(null);
-  const [ride, setRide] = useState(null);
+  // const [ride, setRide] = useState(null);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { socket } = useContext(SocketContext);
   const { user } = useContext(UserDataContext);
 
   useEffect(() => {
-    socket.emit("join", { userType: "user", userId: user._id });
-
     setPickupSuggestions([]);
     setDestinationSuggestions([]);
+  }, []);
+
+  useEffect(() => {
+    // console.log(user);
+
+    socket.emit("join", { userType: "user", userId: user._id });
   }, [user]);
-
-  socket.on("ride-confirmed", (ride) => {
-    setVehicleFound(false);
-    setWaitingForDriver(true);
-    setRide(ride);
-  });
-
-  socket.on("ride-started", (ride) => {
-    console.log("ride");
-    setWaitingForDriver(false);
-    navigate("/riding", { state: { ride } }); // Updated navigate to include ride data
-  });
 
   const handlePickupChange = async (e) => {
     const input = e.target.value;
     setPickup(input);
 
-    // Show suggestions only after user starts typing
     if (input.length > 0) {
       const filteredSuggestions = locations
         .filter((location) =>
@@ -73,7 +64,6 @@ const Home = () => {
 
       setPickupSuggestions(filteredSuggestions);
 
-      // Optionally fetch suggestions from an API if needed
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_BASE_URL}/maps/get-suggestions`,
@@ -84,12 +74,12 @@ const Home = () => {
             },
           }
         );
-        setPickupSuggestions(response.data); // Update with API data
+        setPickupSuggestions(response.data);
       } catch {
         // Handle error (optional)
       }
     } else {
-      setPickupSuggestions([]); // Clear suggestions if input is empty
+      setPickupSuggestions([]);
     }
   };
 
@@ -127,18 +117,17 @@ const Home = () => {
     }
   };
 
-  const handlePickupSelect = (suggestion) => {
-    setPickup(suggestion); // Set selected suggestion to the pickup input
-    setPickupSuggestions([]); // Clear suggestions after selection
-    setPanelOpen(false); // Close the suggestion panel
-  };
+  // const handlePickupSelect = (suggestion) => {
+  //   setPickup(suggestion);
+  //   setPickupSuggestions([]);
+  //   setPanelOpen(false);
+  // };
 
-  // Handle selection of a suggestion for destination
-  const handleDestinationSelect = (suggestion) => {
-    setDestination(suggestion); // Set selected suggestion to the destination input
-    setDestinationSuggestions([]); // Clear suggestions after selection
-    setPanelOpen(false); // Close the suggestion panel
-  };
+  // const handleDestinationSelect = (suggestion) => {
+  //   setDestination(suggestion);
+  //   setDestinationSuggestions([]);
+  //   setPanelOpen(false);
+  // };
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -362,10 +351,10 @@ const Home = () => {
         className="fixed z-10 bottom-0  bg-white px-3 py-6 pt-12 w-full"
       >
         <WaitingForDriver
-          ride={ride}
+          // ride={ride}
           setVehicleFound={setVehicleFound}
           setWaitingForDriver={setWaitingForDriver}
-            waitingForDriver={waitingForDriver}
+          waitingForDriver={waitingForDriver}
         />
       </div>
     </div>

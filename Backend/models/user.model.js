@@ -31,11 +31,9 @@ const userSchema = new mongoose.Schema({
     //   "Password must contain at least 8 characters, including uppercase letters, lowercase letters, numbers, and special characters",
     // ],
   },
-  // sokectId: {
-  //   type: String,
-  //   // required: true,
-  //   unique: true,
-  // },
+  sokectId: {
+    type: String,
+  },
 });
 
 userSchema.methods.generateAuthToken = function () {
