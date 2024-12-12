@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
     //   "Password must contain at least 8 characters, including uppercase letters, lowercase letters, numbers, and special characters",
     // ],
   },
-  sokectId: {
+  socketId: {
     type: String,
   },
 });

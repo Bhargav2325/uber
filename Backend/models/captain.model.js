@@ -31,11 +31,11 @@ const captainSchema = new mongoose.Schema({
     // ],
   },
 
-  // socketId: {
-  //   type: String,
-  //   // required: true,
-  //   unique: true,
-  // },
+  socketId: {
+    type: String,
+    // required: true,
+    // unique: true,
+  },
   status: {
     type: String,
     enum: ["active", "inactive"],
@@ -64,7 +64,7 @@ const captainSchema = new mongoose.Schema({
     },
   },
   location: {
-    lat: {
+    ltd: {
       type: Number,
     },
     lng: {
