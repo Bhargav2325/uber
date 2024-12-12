@@ -1,0 +1,102 @@
+[
+  {
+    "place_name": "New York City",
+    "latitude": 40.712776,
+    "longitude": -74.005974
+  },
+  {
+    "place_name": "Los Angeles",
+    "latitude": 34.052235,
+    "longitude": -118.243683
+  },
+  {
+    "place_name": "London",
+    "latitude": 51.507351,
+    "longitude": -0.127758
+  },
+  {
+    "place_name": "Tokyo",
+    "latitude": 35.689487,
+    "longitude": 139.691711
+  },
+  {
+    "place_name": "Paris",
+    "latitude": 48.856613,
+    "longitude": 2.352222
+  },
+  {
+    "place_name": "Berlin",
+    "latitude": 52.520008,
+    "longitude": 13.404954
+  },
+  {
+    "place_name": "Sydney",
+    "latitude": -33.86882,
+    "longitude": 151.20929
+  },
+  {
+    "place_name": "Moscow",
+    "latitude": 55.755825,
+    "longitude": 37.617298
+  },
+  {
+    "place_name": "Beijing",
+    "latitude": 39.904202,
+    "longitude": 116.407394
+  },
+  {
+    "place_name": "Rio de Janeiro",
+    "latitude": -22.906847,
+    "longitude": -43.172897
+  },
+  {
+    "place_name": "Cape Town",
+    "latitude": -33.92487,
+    "longitude": 18.424055
+  },
+  {
+    "place_name": "Mumbai",
+    "latitude": 19.07609,
+    "longitude": 72.877426
+  },
+  {
+    "place_name": "Dubai",
+    "latitude": 25.276987,
+    "longitude": 55.296249
+  },
+  {
+    "place_name": "Singapore",
+    "latitude": 1.352083,
+    "longitude": 103.819839
+  },
+  {
+    "place_name": "Buenos Aires",
+    "latitude": -34.603722,
+    "longitude": -58.381592
+  },
+  {
+    "place_name": "Cairo",
+    "latitude": 30.04442,
+    "longitude": 31.235712
+  },
+  {
+    "place_name": "Istanbul",
+    "latitude": 41.00824,
+    "longitude": 28.978359
+  },
+  {
+    "place_name": "Bangkok",
+    "latitude": 13.756331,
+    "longitude": 100.501762
+  },
+  {
+    "place_name": "Seoul",
+    "latitude": 37.566536,
+    "longitude": 126.977966
+  },
+  {
+    "place_name": "Mexico City",
+    "latitude": 19.432608,
+    "longitude": -99.133209
+  }
+]
